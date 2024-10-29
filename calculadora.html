@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="4.jpeg" type="image/jpeg">
+            <link rel="shortcut icon" href="4.jpeg" type="image/jpeg">
+    <title>Calculadora</title>
+   
+</head>
+<body>
+    <br>
+    <a href="project.html" class="button">Voltar</a>
+
+    <class class="tudo">
+    <div class="calculator">
+        <div id="display">0</div>
+        <div class="buttons">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button onclick="appendOperator('/')">/</button>
+            <button onclick="appendOperator('*')">*</button>
+            <button onclick="appendOperator('-')">-</button>
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button onclick="appendOperator('+')">+</button>
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button class="equal" onclick="calculate()">=</button>
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button onclick="appendNumber('.')">.</button>
+            <button onclick="appendNumber('0')">0</button>
+            <button onclick="appendOperator('%')">%</button>
+            <button onclick="backspace()">⌫</button>
+        </div>
+    </div>
+</class>
+    <script>
+        let display = document.getElementById('display');
+        let currentInput = '0';
+        let operator = null;
+        let previousInput = null;
+
+        function appendNumber(num) {
+            if (currentInput === '0') {
+                currentInput = num;
+            } else {
+                currentInput += num;
+            }
+            updateDisplay();
+        }
+
+        function appendOperator(op) {
+            if (operator !== null) {
+                calculate();
+            }
+            operator = op;
+            previousInput = currentInput;
+            currentInput = '0';
+        }
+
+        function calculate() {
+            let result;
+            switch (operator) {
+                case '+':
+                    result = parseFloat(previousInput) + parseFloat(currentInput);
+                    break;
+                case '-':
+                    result = parseFloat(previousInput) - parseFloat(currentInput);
+                    break;
+                case '*':
+                    result = parseFloat(previousInput) * parseFloat(currentInput);
+                    break;
+                case '/':
+                    result = parseFloat(previousInput) / parseFloat(currentInput);
+                    break;
+                case '%':
+                    result = parseFloat(previousInput) * (parseFloat(currentInput) / 100);
+                    break;
+                default:
+                    result = currentInput;
+            }
+            currentInput = result.toString();
+            operator = null;
+            previousInput = null;
+            updateDisplay();
+        }
+
+        function clearDisplay() {
+            currentInput = '0';
+            operator = null;
+            previousInput = null;
+            updateDisplay();
+        }
+
+        function backspace() {
+            if (currentInput.length > 1) {
+                currentInput = currentInput.slice(0, -1);
+            } else {
+                currentInput = '0';
+            }
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            display.textContent = currentInput;
+        }
+    </script>
+     <footer>
+        <p>&copy; 2024 Gabriel Augusto. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

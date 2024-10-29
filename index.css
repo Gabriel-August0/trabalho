@@ -1,0 +1,336 @@
+/* Estilos Básicos */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Fundo escuro */
+    color: #f1f1f1; /* Texto claro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Navegação */
+nav {
+    background-color: #333; /* Cor do fundo do menu */
+    padding: 10px 0;
+    width: 100%;
+    position: fixed; /* Fixa o menu no topo */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Garante que o menu esteja acima de outros elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra suave */
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between; /* Uma palavra à esquerda e outra à direita */
+    list-style-type: none;
+    width: 80%;
+    margin: 0 auto; /* Centraliza o conteúdo */
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #00ffff; /* Azul claro */
+    font-size: 1.2em;
+    transition: color 0.3s ease; /* Transição suave para a mudança de cor */
+    position: relative;
+}
+
+.menu li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    background: #ff00ff; /* Linha rosa ao passar o mouse */
+    transition: width 0.3s;
+    bottom: -5px;
+    left: 0;
+}
+
+.menu li a:hover::after {
+    width: 100%; /* Efeito de sublinhado ao passar o mouse */
+}
+
+.menu li a:hover {
+    color: #ff00ff; /* Muda para rosa ao passar o mouse */
+}
+
+/* Espaço abaixo do menu */
+header, main {
+    padding-top: 80px; /* Compensa o menu fixo */
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 3em;
+    color: #00ffff; /* Azul claro */
+}
+
+/* Estilo da imagem do perfil */
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 20px;
+    border: 5px solid #00ffff; /* Borda azul clara */
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
+
+/* Seções */
+section {
+    margin: 50px 0;
+    width: 80%;
+    max-width: 900px; /* Largura máxima da seção */
+    text-align: center; /* Centraliza o texto */
+    line-height: 1.6;
+}
+
+/* Tabela de Cursos */
+.cursos-tabela {
+    width: 100%;
+    border-collapse: collapse; /* Remove o espaçamento entre células */
+    margin-top: 20px;
+}
+
+.cursos-tabela th, .cursos-tabela td {
+    border: 1px solid #00ffff; /* Bordas da tabela */
+    padding: 10px;
+    text-align: center;
+    color: #f1f1f1;
+}
+
+/* Ícones de Redes Sociais */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.icon {
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 1.5em;
+    color: #f1f1f1; /* Cor dos ícones */
+    position: relative;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: #00ffff; /* Fundo azul claro */
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.icon:hover {
+    color: #ff00ff; /* Cor rosa ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o ícone ao passar o mouse */
+}
+
+.icon:hover:before {
+    transform: translate(-50%, -50%) scale(1.2); /* Aumenta o fundo ao passar o mouse */
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    margin: 50px 0;
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* Efeitos de Transição e Interatividade Adicionais */
+a, button {
+    transition: all 0.3s ease;
+}
+
+a:hover, button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+/* butao*/
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #00ffff;
+    color: #121212;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    background-color: #ff00ff;
+    transform: scale(1.1);
+}
+
+li {
+    list-style-type: none;
+  }
+
+  /*calculadora*/
+
+  .tudo {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.calculator {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+#display {
+    background-color: #111111;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    text-align: right;
+    margin-bottom: 10px;
+    border: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    cursor: pointer;
+    margin: 3px;
+    background-color: rgb(31, 31, 31);
+    border: none;
+    color: #fff;
+}
+
+/*relogio*/
+
+.relogio {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 400px;
+    padding: 30px;
+    background: rgba(0, 4, 8, 0.05);
+    border: 2px solid rgba(196, 43, 43, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px rgba(196, 43, 43, 0.2), 0 0 10px rgba(196, 43, 43, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(196, 43, 43, 0.7), 0 0 30px rgba(196, 43, 43, 0.7);
+    }
+}
+
+.relogio div {
+    text-align: center;
+    margin: 0 15px;
+}
+
+.tempo {
+    font-size: 1.5rem;
+    color: #42018b;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .relogio {
+        width: 300px;
+        padding: 20px;
+    }
+
+    .relogio span {
+        font-size: 3rem;
+    }
+
+    .tempo {
+        font-size: 1.2rem;
+    }
+}
+
+/*contato*/
+
+.contact-form input {
+    width: 100%;
+    padding: 8px 0;
+    margin: 8px 0;
+    text-align: left;
+}
+
+.contact-form input[type="text"] {
+    height: 100px;
+}
+
+button:hover {
+    background-color: #0035a8;
+}
+
+.contact-form input[type="text"] {
+    height: 40px;
+}
+
+/* habilidades */
+.skills {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.skill {
+    margin-bottom: 10px;
+}
+
+.skill-name {
+    font-weight: bold;
+}
+
+.progress-bar {
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.progress {
+    height: 20px;
+    background-color: #00ffff;
+    border-radius: 5px 0 0 5px;
+}
