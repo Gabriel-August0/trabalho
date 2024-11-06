@@ -1,3 +1,4 @@
+
 /* Estilos Básicos */
 body {
     margin: 0;
@@ -38,7 +39,7 @@ nav {
 
 .menu li a {
     text-decoration: none;
-    color: #00ffff; /* Azul claro */
+    color: #00ffff; 
     font-size: 1.2em;
     transition: color 0.3s ease; /* Transição suave para a mudança de cor */
     position: relative;
@@ -78,6 +79,10 @@ header {
 h1 {
     font-size: 3em;
     color: #00ffff; /* Azul claro */
+}
+
+h3{
+    color: #00ffff;
 }
 
 /* Estilo da imagem do perfil */
@@ -334,3 +339,65 @@ button:hover {
     background-color: #00ffff;
     border-radius: 5px 0 0 5px;
 }
+
+
+/*github*/
+
+.button-icon {
+    display: flex;
+    border: 3px #00ffff solid;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+  }
+  
+  .iconn {
+    background-color: #fff;
+    padding: 10px 10px 5px 10px;
+  }
+  
+  .iconn svg {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .cube {
+    transition: all 0.4s;
+    transform-style: preserve-3d;
+    width: 200px;
+    height: 20px;
+  }
+  
+  .button-icon:hover {
+    border-color: #00ffff;
+  }
+  
+  .button-icon:hover .cube {
+    transform: rotateX(90deg);
+  }
+  
+  .side {
+    position: absolute;
+    height: 47px;
+    width: 200px;
+    display: flex;
+    font-size: 0.8em;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+  }
+  
+  .top {
+    background: #00ffff;
+    color: #fff;
+    transform: rotateX(-90deg) translate3d(0, 13.5px, 2em);
+  }
+  
+  .front {
+    background: #222229;
+    color: #fff;
+    transform: translate3d(0, 0, 1em);
+  }
+  
